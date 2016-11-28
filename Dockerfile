@@ -21,10 +21,10 @@ RUN useradd --system --user-group --uid $APP_UID --home $APP_HOME $APP_USER \
 
 WORKDIR $APP_PREFIX
 
-RUN wget -q https://download.jetbrains.com/hub/$APP_VERSION/$APP_DISTFILE && \
-    unzip -q $APP_DISTFILE -x */internal/java/* && \
-    mv $APP_DISTNAME $APP_NAME && \
-    chown -R $APP_USER:$APP_USER $APP_DIR && \
+RUN wget -q https://download.jetbrains.com/hub/$APP_VERSION/$APP_DISTFILE \
+    && unzip -q $APP_DISTFILE -x */internal/java/* && \
+    mv $APP_DISTNAME $APP_NAME \
+    && chown -R $APP_USER:$APP_USER $APP_DIR \
     rm $APP_DISTFILE 
 
 USER $APP_USER
