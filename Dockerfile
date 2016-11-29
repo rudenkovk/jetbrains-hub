@@ -5,6 +5,11 @@ MAINTAINER "Konstantin Rudenkov" <rudenkovk@gmail.com>
 ARG HUB_VERSION=2.5
 ARG HUB_BUILD=399
 
+LABEL \
+    version="${HUB_VERSION}.${HUB_BUILD}" \
+    ru.rudenkovk.jetbrains-hub-version="${HUB_VERSION}.${HUB_BUILD}" \
+    ru.rudenkovk.vcs-url="https://github.com/rudenkovk/jetbrains-hub"
+
 ENV APP_NAME=hub \
     APP_PORT=8080 \
     APP_UID=500 \

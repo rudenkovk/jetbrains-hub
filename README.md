@@ -1,1 +1,3 @@
 # jetbrains_hub
+
+My adoptation of Eugene Janusov <esycat@gmail.com> solution for Ubuntu containers. 
