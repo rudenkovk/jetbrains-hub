@@ -21,9 +21,11 @@ ENV APP_USER=$APP_NAME \
     APP_HOME=/var/lib/$APP_NAME \
     APP_DISTFILE="${APP_DISTNAME}.zip"
 
-RUN useradd --system --user-group --uid ${APP_UID} --home ${APP_HOME} ${APP_USER} \ 
-    && mkdir $APP_HOME \
-    && chown -R $APP_USER:$APP_USER $APP_HOME
+# RUN useradd --system --user-group --uid ${APP_UID} --home ${APP_HOME} ${APP_USER} \ 
+#     && mkdir $APP_HOME \
+#     && chown -R $APP_USER:$APP_USER $APP_HOME
+
+RUN mkdir ${APP_HOME}
 
 WORKDIR $APP_PREFIX
 
@@ -33,7 +35,7 @@ RUN wget -q https://download.jetbrains.com/hub/$HUB_VERSION/$APP_DISTFILE \
     && chown -R $APP_USER:$APP_USER $APP_DIR \
     && rm $APP_DISTFILE 
 
-USER $APP_USER
+# USER $APP_USER
 WORKDIR $APP_DIR
 
 RUN bin/hub.sh configure \
