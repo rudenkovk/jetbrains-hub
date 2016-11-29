@@ -15,8 +15,8 @@ ENV APP_NAME=hub \
     APP_HOME=/var/lib/$APP_NAME \
     APP_DISTFILE="${APP_DISTNAME}.zip"
 
-RUN useradd --system --user-group --uid $APP_UID --home $APP_HOME $APP_USER \ 
-    && mkdir $APP_HOME \
+RUN useradd --system --user-group --uid $APP_UID --home $APP_HOME $APP_USER && \ 
+    mkdir $APP_HOME \
     && chown -R $APP_USER:$APP_USER $APP_HOME
 
 WORKDIR $APP_PREFIX
