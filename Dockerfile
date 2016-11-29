@@ -32,7 +32,7 @@ WORKDIR $APP_PREFIX
 RUN wget -q https://download.jetbrains.com/hub/$HUB_VERSION/$APP_DISTFILE \
     && unzip -q $APP_DISTFILE -x */internal/java/* \
     && mv $APP_DISTNAME $APP_NAME \
-    && rm $APP_DISTFILE \
+    && rm $APP_DISTFILE
     # && chown -R $APP_USER:$APP_USER $APP_DIR 
 
 # USER $APP_USER
